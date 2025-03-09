@@ -1,5 +1,6 @@
 google-generativeai==0.8.3
 streamlit==1.40.2
+bs4 
 agno
 openai
 langchain
