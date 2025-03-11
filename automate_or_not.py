@@ -78,14 +78,15 @@ def parse_product(role,tasks) -> dict:
 
 if role:
 
-    ans = parse_product(role,tasks)
-    print(ans)
-    t1= []
-    for i in re.findall('[\d\s\.]+\([\w\W]+\)',ans)[0].split('\n'):
-      if i!='':
-        t1.append([''.join(i.split(',')[:-1]).replace("(",''),i.split(',')[-1].strip(")")])
 
     if "No close match found" != code :
+        ans = parse_product(role,tasks)
+        print(ans)
+        t1= []
+        for i in re.findall('[\d\s\.]+\([\w\W]+\)',ans)[0].split('\n'):
+          if i!='':
+            t1.append([''.join(i.split(',')[:-1]).replace("(",''),i.split(',')[-1].strip(")")])
+
         st.write(f"### Tasks for {role} and AI Impact:")
         # df = pd.DataFrame(roles_data[role], columns=["Task", "AI Impact"])
         df = pd.DataFrame(t1,columns=['Task','AI Impact'])
