@@ -33,7 +33,7 @@ def get_code_for_occupation(user_input):
 
 st.title("AI Impact on Job Roles")
 # User input
-role = st.text_input("Enter a job role (e.g., Actor)")
+role = st.text_input("Enter a job role (e.g., Actor, Software Developer USE TITLE CASE )")
 # role = input()
 code = get_code_for_occupation(role)
 print(code)
