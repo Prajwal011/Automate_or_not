@@ -119,4 +119,4 @@ if role:
             else:
                 st.error("Please enter a question before submitting.")
     else:
-        st.error("Role not found in the dataset. Try 'Actor'.")
+        st.error("Role not found in the dataset. Try from given list:",list(df["Occupation"].values))
