@@ -21,8 +21,9 @@ os.environ['GROQ_API_KEY']='gsk_mRWpg0MUjbMzZSYk7xKfWGdyb3FYBbwdsZDTWGnOFTdNVMOV
 
 df = pd.read_html("https://www.onetonline.org/find/all")
 df= df[0]
-
+df["Occupation"]=df["Occupation"].str.lower()
 def get_code_for_occupation(user_input):
+    user_input = user_input.lower()
     occupations = df["Occupation"].dropna().tolist()  # Get all occupation names
     match, score, idx = process.extractOne(user_input, occupations)  # Find best match
     if score > 70:  # Adjust threshold if needed
