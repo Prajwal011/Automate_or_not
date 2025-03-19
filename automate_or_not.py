@@ -17,7 +17,6 @@ from rapidfuzz import process
 import pandas as pd
 import os
 
-os.environ['GROQ_API_KEY']='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'
 
 df = pd.read_html("https://www.onetonline.org/find/all")
 df= df[0]
